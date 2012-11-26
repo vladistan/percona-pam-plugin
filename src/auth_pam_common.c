@@ -126,6 +126,8 @@ int authenticate_user_with_pam_server (MYSQL_PLUGIN_VIO *vio,
                    &conv_func_info, &pam_handle);
   if (error != PAM_SUCCESS)
     return CR_ERROR;
+    
+  printf ("PAM Start UName [%s]\n", inf->user_name);
 
   error= pam_set_item(pam_handle, PAM_RUSER, info->user_name);
   if (error != PAM_SUCCESS)
@@ -134,47 +136,73 @@ int authenticate_user_with_pam_server (MYSQL_PLUGIN_VIO *vio,
     return CR_ERROR;
   }
 
+    printf ("Using Host [%s]\n", info->host_or_ip);
+  
+  
+    
   error= pam_set_item(pam_handle, PAM_RHOST, info->host_or_ip);
   if (error != PAM_SUCCESS)
   {
     pam_end(pam_handle, error);
     return CR_ERROR;
   }
-
+    
+  printf ("Autenticating .... \n");
   error= pam_authenticate(pam_handle, 0);
+  printf ( "     Result .... %d\n", error);
+    
   if (error != PAM_SUCCESS)
   {
     pam_end(pam_handle, error);
     return CR_ERROR;
   }
 
+  printf ("Act Mgmt .... \n");
+    
   error= pam_acct_mgmt(pam_handle, 0);
   if (error != PAM_SUCCESS)
   {
     pam_end(pam_handle, error);
     return CR_ERROR;
   }
+  printf ( "     Result .... %d\n", error);
+    
 
   /* Get the authenticated user name from PAM */
+ 
+  printf ("Getting user name \n");
   error= pam_get_item(pam_handle, PAM_USER, (void *)&pam_mapped_user_name);
+  printf ( "     Result .... %d\n", error);
+    
   if (error != PAM_SUCCESS)
   {
     pam_end(pam_handle, error);
     return CR_ERROR;
   }
 
+  printf ("Uname %s\n", pam_mapped_user_name);
+    
+
   /* Check if user name from PAM is the same as provided for MySQL.  If
   different, use the new user name for MySQL authorization and as
   CURRENT_USER() value.  */
   if (strcmp(info->user_name, pam_mapped_user_name))
   {
+    printf("Uname substitution detected"\n);
+      
     strncpy(info->authenticated_as, pam_mapped_user_name,
             MYSQL_USERNAME_LENGTH);
     info->authenticated_as[MYSQL_USERNAME_LENGTH]= '\0';
   }
 
+  printf ("Check Auth String\n");
+    
+    
   /* If auth_string specified, then lookup user group,
   get mapped MySQL user name and use it as CURRENT_USER() value */
+    
+    printf("Do we need to lookup user group %s \n", info->auth_string);
+    
   if (info->auth_string &&
       lookup_user_group(pam_mapped_user_name, user_group, sizeof(user_group)))
   {
@@ -182,7 +210,11 @@ int authenticate_user_with_pam_server (MYSQL_PLUGIN_VIO *vio,
                       MYSQL_USERNAME_LENGTH, info->auth_string);
   }
 
+    printf ( "PAM Auth Done\n");
   error= pam_end(pam_handle, error);
+  printf ( "     Result .... %d\n", error);
+
+    
   if (error != PAM_SUCCESS)
     return CR_ERROR;
 

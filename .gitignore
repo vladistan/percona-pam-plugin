@@ -22,3 +22,5 @@ build/build-binary.sh
 m4/*.m4
 doc/build
 doc/source/percona-theme
+
+/Docs/
