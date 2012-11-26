@@ -24,3 +24,4 @@ doc/build
 doc/source/percona-theme
 
 /Docs/
+.DS_Store
