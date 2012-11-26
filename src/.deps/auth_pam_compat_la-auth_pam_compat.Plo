@@ -1,0 +1,115 @@
+auth_pam_compat_la-auth_pam_compat.lo: auth_pam_compat.c ../config.h \
+  auth_pam_common.h /usr/include/security/pam_appl.h \
+  /usr/include/security/_pam_types.h /usr/include/security/_pam_compat.h \
+  /usr/include/security/pam_modules.h /usr/include/mysql/plugin.h \
+  /usr/include/mysql/services.h /usr/include/mysql/service_my_snprintf.h \
+  /usr/bin/../lib/clang/2.9/include/stdarg.h /usr/include/stdlib.h \
+  /usr/include/features.h /usr/include/x86_64-linux-gnu/bits/predefs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/bin/../lib/clang/2.9/include/stddef.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/sigset.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/alloca.h /usr/include/mysql/service_thd_alloc.h \
+  /usr/include/mysql/service_thd_wait.h \
+  /usr/include/mysql/service_thread_scheduler.h \
+  /usr/include/mysql/plugin_ftparser.h /usr/include/mysql/plugin_auth.h \
+  /usr/include/mysql/plugin_auth_common.h \
+  /usr/include/mysql/client_plugin.h /usr/include/assert.h
+
+../config.h:
+
+auth_pam_common.h:
+
+/usr/include/security/pam_appl.h:
+
+/usr/include/security/_pam_types.h:
+
+/usr/include/security/_pam_compat.h:
+
+/usr/include/security/pam_modules.h:
+
+/usr/include/mysql/plugin.h:
+
+/usr/include/mysql/services.h:
+
+/usr/include/mysql/service_my_snprintf.h:
+
+/usr/bin/../lib/clang/2.9/include/stdarg.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/bits/predefs.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/bin/../lib/clang/2.9/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/mysql/service_thd_alloc.h:
+
+/usr/include/mysql/service_thd_wait.h:
+
+/usr/include/mysql/service_thread_scheduler.h:
+
+/usr/include/mysql/plugin_ftparser.h:
+
+/usr/include/mysql/plugin_auth.h:
+
+/usr/include/mysql/plugin_auth_common.h:
+
+/usr/include/mysql/client_plugin.h:
+
+/usr/include/assert.h:
