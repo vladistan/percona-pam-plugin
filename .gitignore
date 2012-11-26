@@ -11,6 +11,9 @@ missing
 Makefile.in
 *.la
 *.lo
+*.so
+*.plo
+*.o
 depcomp
 Makefile
 .deps
