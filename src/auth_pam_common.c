@@ -163,12 +163,13 @@ int authenticate_user_with_pam_server (MYSQL_PLUGIN_VIO *vio,
   printf ("Act Mgmt .... \n");
     
   error= pam_acct_mgmt(pam_handle, 0);
+  printf ( "     Result .... %d\n", error);
+    
   if (error != PAM_SUCCESS)
   {
     pam_end(pam_handle, error);
     return CR_ERROR;
   }
-  printf ( "     Result .... %d\n", error);
     
 
   /* Get the authenticated user name from PAM */
