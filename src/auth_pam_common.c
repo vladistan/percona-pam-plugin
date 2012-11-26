@@ -19,6 +19,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #include "config.h"
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "auth_pam_common.h"
 #include "auth_mapping.h"
 
@@ -127,7 +130,7 @@ int authenticate_user_with_pam_server (MYSQL_PLUGIN_VIO *vio,
   if (error != PAM_SUCCESS)
     return CR_ERROR;
     
-  printf ("PAM Start UName [%s]\n", inf->user_name);
+  printf ("PAM Start UName [%s]\n", info->user_name);
 
   error= pam_set_item(pam_handle, PAM_RUSER, info->user_name);
   if (error != PAM_SUCCESS)
@@ -188,7 +191,7 @@ int authenticate_user_with_pam_server (MYSQL_PLUGIN_VIO *vio,
   CURRENT_USER() value.  */
   if (strcmp(info->user_name, pam_mapped_user_name))
   {
-    printf("Uname substitution detected"\n);
+    printf("Uname substitution detected\n");
       
     strncpy(info->authenticated_as, pam_mapped_user_name,
             MYSQL_USERNAME_LENGTH);

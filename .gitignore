@@ -11,6 +11,9 @@ missing
 Makefile.in
 *.la
 *.lo
+*.so
+*.plo
+*.o
 depcomp
 Makefile
 .deps
@@ -22,6 +25,5 @@ build/build-binary.sh
 m4/*.m4
 doc/build
 doc/source/percona-theme
-
 /Docs/
 .DS_Store
